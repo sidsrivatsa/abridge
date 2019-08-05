@@ -5,7 +5,7 @@ import { BAD_REQUEST, CREATED, OK } from "http-status-codes";
 
 // Init shared
 const router = Router();
-const userDao = new UserDao();
+const urlDao = new UserDao();
 export const paramMissingError =
  "One or more of the required parameters was missing.";
 
@@ -21,8 +21,8 @@ export const deleteUserPath = "/delete/:id";
 
 router.get(getUsersPath, async (req: Request, res: Response) => {
  try {
-  const users = await userDao.getAll();
-  return res.status(OK).json({ users });
+  const urls = await urlDao.getAll();
+  return res.status(OK).json({ urls });
  } catch (err) {
   logger.error(err.message, err);
   return res.status(BAD_REQUEST).json({
@@ -43,7 +43,7 @@ router.post(addUserPath, async (req: Request, res: Response) => {
     error: paramMissingError
    });
   }
-  await userDao.add(user);
+  await urlDao.add(user);
   return res.status(CREATED).end();
  } catch (err) {
   logger.error(err.message, err);
@@ -66,7 +66,7 @@ router.put(updateUserPath, async (req: Request, res: Response) => {
    });
   }
   user.id = Number(user.id);
-  await userDao.update(user);
+  await urlDao.update(user);
   return res.status(OK).end();
  } catch (err) {
   logger.error(err.message, err);
@@ -82,7 +82,7 @@ router.put(updateUserPath, async (req: Request, res: Response) => {
 
 router.delete(deleteUserPath, async (req: Request, res: Response) => {
  try {
-  await userDao.delete(Number(req.params.id));
+  await urlDao.delete(Number(req.params.id));
   return res.status(OK).end();
  } catch (err) {
   logger.error(err.message, err);
