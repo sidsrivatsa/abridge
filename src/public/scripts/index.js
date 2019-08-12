@@ -136,8 +136,8 @@ function getUserDisplayEle(user) {
  return `<div class="user-display-ele">
 
         <div class="normal-view">
-            <div>Name: ${user.name}</div>
-            <div>Email: ${user.email}</div>
+            <div>Short URL: ${user.name}</div>
+            <div>Long URL: ${user.email}</div>
             <button class="edit-user-btn" data-user-id="${user.id}">
                 Edit
             </button>
@@ -148,10 +148,10 @@ function getUserDisplayEle(user) {
         
         <div class="edit-view">
             <div>
-                Name: <input class="name-edit-input" value="${user.name}">
+                Short URL: <input class="name-edit-input" value="${user.name}">
             </div>
             <div>
-                Email: <input class="email-edit-input" value="${user.email}">
+                Long URL: <input class="email-edit-input" value="${user.email}">
             </div>
             <button class="submit-edit-btn" data-user-id="${user.id}">
                 Submit
@@ -167,15 +167,15 @@ function displayUsers() {
  HttpGet("/api/users/all")
   .then(response => response.json())
   .then(response => {
-   let allUsers = response.users;
+   let allUrls = response.urls;
 
    // Empty the anchor
-   let allUsersAnchor = document.getElementById("all-users-anchor");
-   allUsersAnchor.innerHTML = "";
+   let allUrlsAnchor = document.getElementById("all-users-anchor");
+   allUrlsAnchor.innerHTML = "";
 
    // Append users to anchor
-   allUsers.forEach(user => {
-    allUsersAnchor.innerHTML += getUserDisplayEle(user);
+   allUrls.forEach(url => {
+    allUrlsAnchor.innerHTML += getUserDisplayEle(url);
    });
   });
 }
