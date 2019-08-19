@@ -1,15 +1,1 @@
-{
- "users": [
-  {
-   "name": "Sean Maxwell",
-   "email": "sean.maxwell@gmail.com",
-   "id": 159123164363
-  },
-  {
-   "name": "Gordan Freeman",
-   "email": "gordan.freeman@halflife.com",
-   "id": 906524522143
-  },
-  { "name": "John Smith", "email": "jsmith@yahoo.com", "id": 357437875835 }
- ]
-}
+{"users":[{"name":"Sean Maxwell","email":"sean.maxwell@gmail.com","id":159123164363},{"name":"Gordan Freeman","email":"gordan.freeman@halflife.com","id":906524522143},{"name":"John Smith","email":"jsmith@yahoo.com","id":357437875835},{"name":"rwsg","email":"5f7e7800-c265-11e9-89fd-5351776b0eda","id":813013170245},{"name":"rwsgdth","email":"66a781d0-c265-11e9-89fd-5351776b0eda","id":701114807256}]}

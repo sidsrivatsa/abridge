@@ -2,6 +2,7 @@ import { UserDao } from "@daos";
 import { logger } from "@shared";
 import { Request, Response, Router } from "express";
 import { BAD_REQUEST, CREATED, OK } from "http-status-codes";
+import { getShort } from "../../utils/getShort";
 
 // Init shared
 const router = Router();
@@ -43,7 +44,7 @@ router.post(addUserPath, async (req: Request, res: Response) => {
     error: paramMissingError
    });
   }
-  await urlDao.add(user);
+  await urlDao.add({ ...user, email: getShort() });
   return res.status(CREATED).end();
  } catch (err) {
   logger.error(err.message, err);
