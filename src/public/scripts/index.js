@@ -18,8 +18,7 @@ document.addEventListener(
   // Setup data
   let data = {
    user: {
-    name: document.getElementById("name-input").value,
-    email: document.getElementById("email-input").value
+    name: document.getElementById("name-input").value
    }
   };
 
@@ -148,7 +147,7 @@ function getUserDisplayEle(user) {
         
         <div class="edit-view">
             <div>
-                Short URL: <input class="name-edit-input" value="${user.name}">
+                Long URL: <input class="name-edit-input" value="${user.name}">
             </div>
             <div>
                 Long URL: <input class="email-edit-input" value="${user.email}">
