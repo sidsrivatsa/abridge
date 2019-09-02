@@ -1,3 +1,3 @@
-import uuidv1 from "uuid/v1";
+import uuidv4 from "uuid/v4";
 
-export const getShort = () => uuidv1();
+export const getShort = () => uuidv4().substr(0, 8);

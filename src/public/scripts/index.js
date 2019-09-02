@@ -135,8 +135,8 @@ function getUserDisplayEle(user) {
  return `<div class="user-display-ele">
 
         <div class="normal-view">
-            <div>Short URL: ${user.name}</div>
-            <div>Long URL: ${user.email}</div>
+            <div>Long URL: ${user.name}</div>
+            <div>Short URL: ${user.email}</div>
             <button class="edit-user-btn" data-user-id="${user.id}">
                 Edit
             </button>
