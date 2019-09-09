@@ -4,6 +4,7 @@ import { Request, Response } from "express";
 import logger from "morgan";
 import path from "path";
 import BaseRouter from "./routes/Base";
+import RedirRouter from "./routes/redir/Redir";
 
 // Init express
 const app = express();
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/api", BaseRouter);
+app.use("/go", RedirRouter);
 
 /**
  * Point express to the 'views' directory. If you're using a
