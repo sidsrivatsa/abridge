@@ -14,8 +14,7 @@ router.get("/:url", async (req: Request, res: Response) => {
   console.log(req.params);
   const urls: Array<any> = await urlDao.getAll();
   urls.forEach(element => {
-   if (element.email === req.params.url)
-    return res.status(OK).json(element.name);
+   if (element.email === req.params.url) return res.redirect(element.name);
   });
   return res.status(OK).json("ERROR");
  } catch (err) {
