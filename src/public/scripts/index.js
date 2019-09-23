@@ -135,8 +135,8 @@ function getUserDisplayEle(user) {
  return `<div class="user-display-ele">
 
         <div class="normal-view">
-            <div>Long URL: ${user.name}</div>
-            <div>Short URL: ${user.email}</div>
+            <div>Long URL: <a href=${user.name}>${user.name}</a></div>
+            <div>Short URL: <a href="/go/${user.email}">${window.location.host}/go/${user.email}</a></div>
             <button class="edit-user-btn" data-user-id="${user.id}">
                 Edit
             </button>
@@ -150,7 +150,7 @@ function getUserDisplayEle(user) {
                 Long URL: <input class="name-edit-input" value="${user.name}">
             </div>
             <div>
-                Long URL: <input class="email-edit-input" value="${user.email}">
+                Short URL: <input class="email-edit-input" value="${user.email}" readonly>
             </div>
             <button class="submit-edit-btn" data-user-id="${user.id}">
                 Submit
