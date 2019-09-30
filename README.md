@@ -4,10 +4,15 @@
 
 [Express](https://www.npmjs.com/package/express) with [TypeScript's](https://www.npmjs.com/package/typescript) application generator.
 
-## What is it?
+## What is express-generator-typescript?
 
 Creates a new express application similar to the _express-generator_ module. Except this new
 application is configured to use TypeScript instead of plain JavaScript.
+
+## What is abridge?
+
+Abridge is intended to be a simple URL shortening service. Random short URLs are generated for each long URL
+provided and navigating to these short URLs will cause a browser redirect.
 
 ## Why express-generator-typescript?
 
