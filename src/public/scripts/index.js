@@ -1,7 +1,7 @@
 /**
  * Get users
  */
-displayUsers();
+displayURLs();
 
 /**
  * Add User
@@ -23,7 +23,7 @@ document.addEventListener(
   };
 
   HttpPost("/api/users/add", data).then(() => {
-   displayUsers();
+   displayURLs();
   });
  },
  false
@@ -103,7 +103,7 @@ document.addEventListener(
   };
 
   HttpPut("/api/users/update", data).then(() => {
-   displayUsers();
+   displayURLs();
   });
  },
  false
@@ -125,7 +125,7 @@ document.addEventListener(
   let id = event.target.getAttribute("data-user-id");
 
   HttpDelete("/api/users/delete/" + id).then(() => {
-   displayUsers();
+   displayURLs();
   });
  },
  false
@@ -162,7 +162,7 @@ function getUserDisplayEle(user) {
     </div>`;
 }
 
-function displayUsers() {
+function displayURLs() {
  HttpGet("/api/users/all")
   .then(response => response.json())
   .then(response => {
